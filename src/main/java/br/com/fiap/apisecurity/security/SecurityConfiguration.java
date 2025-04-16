@@ -27,7 +27,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         // cria regra para endpoint específico
                         //.requestMatchers(HttpMethod.DELETE, "/map").hasRole("ADMIN")
-                        //.requestMatchers(HttpMethod.POST, "/livro").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/users").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
 
 
                         .anyRequest().authenticated()
