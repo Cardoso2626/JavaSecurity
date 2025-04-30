@@ -18,6 +18,7 @@ public class User implements UserDetails{
     private UUID id;
     private String username;
     private String password;
+    @Enumerated(EnumType.STRING)
     private UserRole role;
 
     public User() {};
@@ -26,6 +27,9 @@ public class User implements UserDetails{
         this.username = username;
         this.password = password;
         this.role = role;
+    }
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     @Override
